@@ -9,7 +9,10 @@ const PASSWORD_DB = process.env.PASSWORD_DB;
 
 const app = express();
 
-const whitelist = ["https://gixxy.com/"];
+const whitelist = [
+  "https://portfolio2-0-gamma.vercel.app/",
+  "http://localhost:3000/",
+];
 
 const options: cors.CorsOptions = {
   origin: whitelist,
