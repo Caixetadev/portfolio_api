@@ -9,17 +9,8 @@ const PASSWORD_DB = process.env.PASSWORD_DB;
 
 const app = express();
 
-const whitelist = [
-  "https://portfolio2-0-324eolhcz-caixetadev.vercel.app/projects",
-  "http://localhost:3000/projects",
-];
-
-const options: cors.CorsOptions = {
-  origin: whitelist,
-};
-
 app.use(express.json());
-app.use(cors(options));
+app.use(cors());
 app.use(router);
 
 const connectDB = (): void => {

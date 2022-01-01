@@ -1,7 +1,16 @@
 import { Request, Response } from "express";
 import Projects from "../models/projects";
 
+const allowedOrigins = [
+  "https://portfolio2-0-3g12hzffo-caixetadev.vercel.app/",
+  "http://localhost:3000",
+];
+
 export const Home = async (req: Request, res: Response) => {
+  const origin = req.headers.origin || "";
+  if (allowedOrigins.includes(origin)) {
+    res.setHeader("Access-Control-Allow-Origin", origin);
+  }
   try {
     const products = await Projects.find();
 
@@ -12,6 +21,10 @@ export const Home = async (req: Request, res: Response) => {
 };
 
 export const HomePost = async (req: Request, res: Response) => {
+  const origin = req.headers.origin || "";
+  if (allowedOrigins.includes(origin)) {
+    res.setHeader("Access-Control-Allow-Origin", origin);
+  }
   const { name, date, image, description } = req.body;
 
   const projects = {
@@ -31,6 +44,10 @@ export const HomePost = async (req: Request, res: Response) => {
 };
 
 export const HomeDelete = async (req: Request, res: Response) => {
+  const origin = req.headers.origin || "";
+  if (allowedOrigins.includes(origin)) {
+    res.setHeader("Access-Control-Allow-Origin", origin);
+  }
   const id = req.params.id;
 
   const project = await Projects.findOne({ _id: id });
@@ -50,6 +67,10 @@ export const HomeDelete = async (req: Request, res: Response) => {
 };
 
 export const HomeUpdate = async (req: Request, res: Response) => {
+  const origin = req.headers.origin || "";
+  if (allowedOrigins.includes(origin)) {
+    res.setHeader("Access-Control-Allow-Origin", origin);
+  }
   const id = req.params.id;
   const { name, date, image, description } = req.body;
 
