@@ -11,7 +11,7 @@ const app = express();
 
 const whitelist = [
   "https://portfolio2-0-gamma.vercel.app/",
-  "http://localhost:3000/",
+  "http://localhost:3000/projects",
 ];
 
 const options: cors.CorsOptions = {
