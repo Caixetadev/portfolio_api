@@ -8,7 +8,7 @@ import {
 import cors from "cors";
 const router = Router();
 
-const whitelist = ["https://gbxxy.com/"];
+const whitelist = ["https://gixxy.com/"];
 
 const options: cors.CorsOptions = {
   origin: whitelist,
