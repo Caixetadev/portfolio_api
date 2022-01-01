@@ -10,7 +10,7 @@ const PASSWORD_DB = process.env.PASSWORD_DB;
 const app = express();
 
 const whitelist = [
-  "https://portfolio2-0-gamma.vercel.app/",
+  "https://portfolio2-0-324eolhcz-caixetadev.vercel.app/projects",
   "http://localhost:3000/projects",
 ];
 
