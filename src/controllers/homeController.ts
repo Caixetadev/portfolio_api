@@ -1,6 +1,7 @@
+import { Request, Response } from "express";
 import Projects from "../models/projects";
 
-export const Home = async (req: any, res: any) => {
+export const Home = async (req: Request, res: Response) => {
   try {
     const products = await Projects.find();
 
@@ -10,7 +11,7 @@ export const Home = async (req: any, res: any) => {
   }
 };
 
-export const HomePost = async (req: any, res: any) => {
+export const HomePost = async (req: Request, res: Response) => {
   const { name, date, image, description } = req.body;
 
   const projects = {
@@ -29,7 +30,7 @@ export const HomePost = async (req: any, res: any) => {
   }
 };
 
-export const HomeDelete = async (req: any, res: any) => {
+export const HomeDelete = async (req: Request, res: Response) => {
   const id = req.params.id;
 
   const project = await Projects.findOne({ _id: id });
@@ -48,7 +49,7 @@ export const HomeDelete = async (req: any, res: any) => {
   }
 };
 
-export const HomeUpdate = async (req: any, res: any) => {
+export const HomeUpdate = async (req: Request, res: Response) => {
   const id = req.params.id;
   const { name, date, image, description } = req.body;
 
