@@ -2,7 +2,6 @@ import { Request, Response } from "express";
 import Projects from "../models/projects";
 
 export const Home = async (req: Request, res: Response) => {
-  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
   try {
     const products = await Projects.find();
 
