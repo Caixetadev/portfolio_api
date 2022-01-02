@@ -12,11 +12,6 @@ export const Home = async (req: Request, res: Response) => {
 };
 
 export const HomePost = async (req: Request, res: Response) => {
-  const id = process.env.SECURITY_TOKEN;
-
-  const authToken = req.headers.authorization;
-
-  console.log(id, authToken);
   const { name, date, image, description } = req.body;
 
   const projects = {
