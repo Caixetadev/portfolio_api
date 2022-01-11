@@ -4,14 +4,17 @@ interface IProjects {
   name: string;
   image: string;
   description: string;
-  language: string[];
+  language: {
+    name: string;
+    image: string
+  }
 }
 
 const ProjectsSchema = new Schema<IProjects>({
   name: String,
   image: String,
   description: String,
-  language: Array,
+  language: ,
 });
 
 const Projects = mongoose.model("Projects", ProjectsSchema);
