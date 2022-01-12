@@ -12,13 +12,15 @@ export const Home = async (req: Request, res: Response) => {
 };
 
 export const HomePost = async (req: Request, res: Response) => {
-  const { name, language, image, description } = req.body;
+  const { name, language, language2, icons, image, description } = req.body;
 
   const projects = {
     name,
     image,
     description,
     language,
+    language2,
+    icons,
   };
 
   try {
@@ -51,13 +53,15 @@ export const HomeDelete = async (req: Request, res: Response) => {
 
 export const HomeUpdate = async (req: Request, res: Response) => {
   const id = req.params.id;
-  const { name, language, image, description } = req.body;
+  const { name, language, language2, icons, image, description } = req.body;
 
   const project = {
     name,
     image,
     description,
     language,
+    language2,
+    icons,
   };
 
   try {

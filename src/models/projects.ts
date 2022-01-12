@@ -6,9 +6,9 @@ interface IProjects {
   description: string;
   language: string;
   language2: string;
-  language3: string;
   icons: {
     icon: string;
+    icon2: string
   };
 }
 
@@ -18,7 +18,6 @@ const ProjectsSchema = new Schema<IProjects>({
   description: String,
   language: String,
   language2: String,
-  language3: String,
   icons: Object,
 });
 
