@@ -6,10 +6,8 @@ interface IProjects {
   description: string;
   language: string;
   language2: string;
-  icons: {
-    icon: string;
-    icon2: string
-  };
+  linkRepo: string;
+  linkPreview: string;
 }
 
 const ProjectsSchema = new Schema<IProjects>({
@@ -18,7 +16,8 @@ const ProjectsSchema = new Schema<IProjects>({
   description: String,
   language: String,
   language2: String,
-  icons: Object,
+  linkRepo: String,
+  linkPreview: String,
 });
 
 const Projects = mongoose.model("Projects", ProjectsSchema);
