@@ -6,7 +6,6 @@ export function isAuthenticated(
   next: NextFunction
 ) {
   const id = process.env.SECURITY_TOKEN;
-
   const authToken = req.headers.authorization;
 
   if (!authToken) {
@@ -24,4 +23,4 @@ export function isAuthenticated(
       errorCode: "token.invalid",
     });
   }
-}
+};
